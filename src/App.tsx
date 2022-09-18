@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import ThemeProvider from './theme/ThemeProvider'
 
-function App() {
+import Header from './components/layouts/Header'
+import TodoContainer from './components/todos/TodoContainer'
+import Footer from './components/layouts/Footer'
+
+import './App.css'
+
+const App = () => {
+  const [darkMode, setDarkMode] = useState<boolean>(false)
+
+  const switchMode = () => setDarkMode(!darkMode)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className='App'
+      style={{ background: darkMode ? '#171823' : '#ffffff' }}
+    >
+      <ThemeProvider>
+        <Header darkMode={darkMode} />
+        <TodoContainer darkMode={darkMode} switchMode={switchMode} />
+        <Footer />
+      </ThemeProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

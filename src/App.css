@@ -1,38 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Josefin Sans';
+}
+
 .App {
-  text-align: center;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header img {
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
+  position: absolute;
+  top: 4.375rem;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.TodoContainer {
+  width: 33.8125em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.TodoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.75rem;
+}
+
+.TodoHeader h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.9375rem;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.TodoHeader img {
+  width: 1.5625rem;
+  height: 1.5625rem;
+  cursor: pointer;
+}
+
+.TodoContainer section,
+.TodoCreate {
+  border-radius: 5px;
+}
+
+.TodoCreate {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.TodoCreate input::placeholder {
+  color: #9495a5;
+}
+
+.TodoCreate .dark::placeholder {
+  color: #767992;
+}
+
+.TodoItem div,
+.TodoCreate div {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.TodoItem div:hover,
+.TodoCreate div:hover,
+.TodoCreate .active:hover,
+.TodoItem .active:hover {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.TodoCreate input[type='text'],
+.TodoCreate input::placeholder,
+.TodoItem span {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.25px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.TodoItem,
+.TodoFilter {
+  border-radius: 5px;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+hr {
+  border: none;
+  height: 1px;
+}
+
+.TodoFilter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.TodoFilter .items,
+.TodoFilter .clear {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  letter-spacing: -0.012;
+}
+
+.TodoFilter div {
+  cursor: pointer;
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  letter-spacing: -0.012;
+}
+
+.TodoFilter div span:nth-child(2) {
+  margin-left: 1.125rem;
+  margin-right: 1.125rem;
+}
+
+.TodoFilter .clear {
+  cursor: pointer;
+}
+
+.TodoFilter div span,
+.TodoFilter .clear {
+  color: #9495a5;
+}
+
+.TodoFilter div .dark,
+.TodoFilter .dark {
+  color: #5b5e7e;
+}
+
+.TodoFilter div span:hover,
+.TodoFilter .clear:hover {
+  color: #494c6b;
+}
+
+.TodoFilter div .dark:hover,
+.TodoFilter .dark:hover {
+  color: #ffffff;
+}
+
+.TodoFilter .active {
+  color: #3a7cfd;
+}
+
+footer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 3.25rem;
+  text-align: center;
+  width: 100%;
+}
+
+footer p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  text-align: center;
+  letter-spacing: -0.01215rem;
 }
